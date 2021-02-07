@@ -1,0 +1,318 @@
+// Menu 
+
+.nav {
+
+	margin: 0;
+	padding: 0;
+	display: none;
+
+	@include bp(less_than_ipad) {
+		height: auto;
+		padding: 3em 0 5em;
+	}
+
+	>ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		display: block;
+		// border-bottom: 1px solid $green;
+
+		a {
+			text-decoration: none;
+			color: $white;
+			display: block;
+			padding: 1em;
+			// border-bottom: 1px solid $border-color;
+
+			span {
+				position: relative;
+				display: inline-block;
+				font-size: 1.1em;
+
+				&:hover {
+					color: $green;
+				}
+
+				&:hover::after {
+					position: absolute;
+					display: block;
+					content: "";
+					background: $secondary__color;
+					height: 3px;
+					width: 100%;
+					overflow: hidden;
+				}
+
+				@include bp(less_than_ipad) {
+					&::after {
+						position: absolute;
+						display: block;
+						content: "";
+						background: $secondary__color;
+						height: 3px;
+						width: 100%;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&:last-child {
+			a {
+				border-bottom: none;
+			}
+		}
+
+		ul.sub-menu,
+		ul.children {
+
+			margin: 0;
+			display: none;
+			padding-left: 10px;
+
+			li {
+
+				// padding: 1em;
+
+				a {
+
+					border-bottom: 1px solid #ccc;
+					padding: 1em;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+
+			}
+
+		}
+
+		&.menu-item-has-children {
+			position: relative;
+
+			&::after {
+				content: "+";
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 1.65em;
+				width: 1.65em;
+				font-size: 2.15em;
+				text-align: center;
+				bottom: 0;
+				font-size: 1.5em;
+				padding-top: .1em;
+				transition: all .2s linear;
+			}
+
+			&.expanded {
+
+				&::after {
+					transform: rotate(45deg);
+				}
+
+				>ul.sub-menu,
+				>ul.children {
+					display: block;
+				}
+			}
+		}
+	}
+
+	@include bp(ipad_and_up) {
+
+		padding: 0;
+		float: right;
+		display: block;
+		border: 0;
+
+		li {
+			position: relative;
+			list-style: none;
+			display: inline-block;
+			border: none;
+
+			a {
+				border-bottom: 0;
+				font-size: .95em;
+				padding: 0 .5em;
+
+				/*
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
+				*/
+				&:hover,
+				&:focus {
+					color: white(.7);
+					text-decoration: underline;
+				}
+			}
+
+			&:first-child {}
+
+			&:last-child {}
+
+			&.menu-item-has-children {
+				&::after {
+					display: none;
+				}
+			}
+
+			/*
+			plan your menus and drop-downs wisely.
+			*/
+			ul.sub-menu,
+			ul.children {
+				background: #eee;
+				display: block;
+				margin-top: 0;
+				border-top: 0;
+				position: absolute;
+				visibility: hidden;
+				z-index: 8999;
+
+				li {
+
+					padding-left: 0;
+
+					a {
+						padding-left: 10px;
+						border-right: 0;
+						display: block;
+						width: 180px;
+						border-bottom: 1px solid #333;
+						text-overflow: ellipsis;
+						overflow: hidden;
+
+						&:hover,
+						&:focus {}
+
+						&:link {}
+					}
+
+					&:first-child {}
+
+					&:last-child {
+
+						a {
+							border-bottom: 0;
+						}
+					}
+
+					/*
+					if you need to go deeper, go nuts
+					just remember deeper menus suck
+					for usability. k, bai.
+					*/
+					ul {
+						top: 0;
+						left: 100%;
+					}
+				}
+
+				/* highlight sub-menu current page */
+				li.current-menu-item,
+				li.current_page_item,
+				li.current_page_ancestor {
+					a {}
+				}
+			}
+
+			/* showing sub-menus */
+			&:hover>ul {
+				top: auto;
+				visibility: visible;
+			}
+
+		}
+
+		/* end .menu ul li */
+
+		li {
+
+			>a {
+				padding: 1.6em 1em;
+			}
+		}
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor {
+			a {}
+		}
+
+		/* end current highlighters */
+	}
+}
+
+#mobile-logo {
+
+	a {
+		display: block;
+		text-align: center;
+		color: #FFF;
+		// font-family: $title-font;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	@include bp(ipad_and_up) {
+		display: none;
+	}
+
+}
+
+#main-menu-toggle {
+	display: none;
+	position: absolute;
+	top: 2.25em;
+	right: 1em;
+
+	@include bp(less_than_ipad) {
+		display: block;
+
+		>span {
+			font-size: 1.5em;
+			height: 1.5em;
+			width: 1.5em;
+			display: block;
+			text-align: center;
+		}
+
+		.collapse {
+			display: none;
+		}
+
+		&.menu-visible {
+
+			.expand {
+				display: none;
+			}
+
+			.collapse {
+				display: block;
+			}
+
+			&+div .nav,
+			&+.nav {
+				display: block;
+			}
+		}
+	}
+}

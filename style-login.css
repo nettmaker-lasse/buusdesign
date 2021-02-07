@@ -1,0 +1,30 @@
+body.login {
+	background-color: #04080C;
+}
+
+.login form {
+	background: #0E1317;
+	color: #fff;
+	border: none;
+	border-radius: 12px;
+}
+
+.login #backtoblog a, .login #nav a {
+	color: #fff;
+}
+
+.login #backtoblog a:hover, .login #nav a:hover {
+	color: #66ffe4;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+	background: #66ffe4;
+	color: #000;
+	border: none;
+}
+
+.login #login_error, .login .message, .login .success {
+	background: #0E1317;
+	color: #fff;
+	border-left: 4px solid #66ffe4;
+}

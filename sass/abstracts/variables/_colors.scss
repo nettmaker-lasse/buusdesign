@@ -1,0 +1,44 @@
+
+// $primary__color: #003839;
+$primary__color: #081C15;
+// $secondary__color: #F4A15E;
+$green: #66ffe4;
+$secondary__color: $green;
+$secondary__color_darken: $green;
+$secondary__color_lighter: $green;
+$white: #fff;
+$black: #212121;
+$red: #E03050;
+$primary__black_light: #04080C;
+$primary__black_lighter: #0E1317;
+$primary__blue: $primary__black_lighter;
+// $primary__black_lighter:#22262E;
+
+// synthwave soon
+$synth__purple: #18122e;
+$synth__red: 	#BD4090;
+$synth__blue: 	#89F9FC;
+// box-shadow: 0px 0px 100px 0px #BD4090;
+
+
+
+$color__background-body: $primary__black_light;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: $green;
+$color__link-visited: $secondary__color	;
+$color__link-hover: $secondary__color;
+$color__text-main: $black;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;

@@ -1,0 +1,82 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+/*
+ * Mixin for easy media queries
+ * @include bp(tablet) { SCSS here };
+*/
+@mixin bp($point) {
+	@if $point==biggie {
+		@media (max-width : 1600px) {
+			@content;
+		}
+	}
+
+	@if $point==tablet {
+		@media (max-width : 1024px) {
+			@content;
+		}
+	}
+
+	@if $point==less_than_ipad {
+		@media (max-width : 767px) {
+			@content;
+		}
+	}
+
+	@if $point==ipad_and_up {
+		@media (min-width : 768px) {
+			@content;
+		}
+	}
+
+	@if $point==tablet_and_up {
+		@media (min-width : 900px) {
+			@content;
+		}
+	}
+
+	@if $point==tablet_and_down {
+		@media (max-width : 900px) {
+			@content;
+		}
+	}
+
+	@if $point==bigger_than_phone {
+		@media (min-width : 480px) {
+			@content;
+		}
+	}
+
+	@else if $point==phone {
+		@media (max-width : 480px) {
+			@content;
+		}
+	}
+}
+
+@mixin breakpoint($size, $direction: larger_than) {
+
+	@if ($direction==larger_than) {
+		@media (min-width : #{$size}) {
+			@content;
+		}
+	}
+
+	@else {
+		$size: $size - 1px;
+
+		@media (max-width : #{$size}) {
+			@content;
+		}
+	}
+}
