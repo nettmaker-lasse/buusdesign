@@ -3,7 +3,7 @@
 footer {
 
 	&#colophon {
-		background-color: $primary__black_lighter;
+		background-color: $synth__purple;
 		color: $white;
 	}
 
@@ -37,7 +37,15 @@ footer {
 					position: relative;
 
 					&:hover {
-						color: $secondary__color;
+						color: $red;
+					}
+				}
+
+				.logo {
+					a {
+						img {
+							max-width: 25%;
+						}
 					}
 				}
 
@@ -46,22 +54,12 @@ footer {
 				}
 
 				a {
-				&.email,
-				&.phone {
-					text-decoration: none;
 
-					// &:hover::after {
-					// 	position: absolute;
-					// 	display: block;
-					// 	content: "";
-					// 	color: $secondary__color;
-					// 	background-color: $secondary__color;
-					// 	height: 3px;
-					// 	width: 100%;
-					// 	overflow: hidden;
-					// }
+					&.email,
+					&.phone {
+						text-decoration: none;
+					}
 				}
-			}
 			}
 
 			&.menu {
@@ -86,14 +84,14 @@ footer {
 									position: relative;
 
 									&:hover {
-										color: $secondary__color;
+										color: $red;
 									}
 
 									&:hover::after {
 										position: absolute;
 										display: block;
 										content: "";
-										background-color: $secondary__color;
+										background-color: $red;
 										height: 3px;
 										width: 100%;
 										overflow: hidden;
@@ -120,7 +118,7 @@ footer {
 					position: relative;
 
 					&:hover {
-						color: $secondary__color;
+						color: $red;
 					}
 
 					&.instagram {
@@ -131,7 +129,7 @@ footer {
 							position: absolute;
 							right: 0;
 							top: .3em;
-							background-image: url( 'dist/images/instagram-icon.svg' );
+							background-image: url('dist/images/instagram-icon.svg');
 							width: 30px;
 							height: 30px;
 							background-position: center;
@@ -148,7 +146,7 @@ footer {
 							position: absolute;
 							right: 0;
 							top: .3em;
-							background-image: url( 'dist/images/facebook-icon.svg' );
+							background-image: url('dist/images/facebook-icon.svg');
 							width: 30px;
 							height: 30px;
 							background-position: center;
@@ -165,7 +163,7 @@ footer {
 							position: absolute;
 							right: 0;
 							top: .3em;
-							background-image: url( 'dist/images/linkedin-icon.svg' );
+							background-image: url('dist/images/linkedin-icon.svg');
 							width: 30px;
 							height: 30px;
 							background-position: center;
@@ -182,7 +180,7 @@ footer {
 							position: absolute;
 							right: 0;
 							top: .3em;
-							background-image: url( 'dist/images/twitter-icon.svg' );
+							background-image: url('dist/images/twitter-icon.svg');
 							width: 30px;
 							height: 30px;
 							background-position: center;

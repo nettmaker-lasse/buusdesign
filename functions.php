@@ -219,3 +219,8 @@ function template_router( $base = 'partials/content', $singular_check = false ){
 	array_walk( $templates, function( &$item ){ $item .= '.php'; } );
 	locate_template($templates, true, false);
 }
+
+function custom_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );

@@ -13,25 +13,26 @@
 		<header class="entry-header">
 			<?php buusdesign_post_thumbnail(); ?>
 		</header>
+			<div class="wrapper-post">
+				<div class="entry-content">
 
-		<div class="entry-content">
+					<?php if ( is_singular() ) : ?>
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php else : ?>
+						<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+					<?php endif; ?>
 
-			<?php if ( is_singular() ) : ?>
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<?php else : ?>
-				<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-			<?php endif; ?>
+					<?php if ( 'post' === get_post_type() ) : ?>
+						
+					<?php endif; ?>
 
-			<?php if ( 'post' === get_post_type() ) : ?>
-				
-			<?php endif; ?>
+					<?php the_excerpt(); ?>
 
-			<?php the_excerpt(); ?>
+				</div>
 
-		</div>
-
-		<footer class="entry-footer">
-			<a href="<?php echo get_permalink(); ?>">Read more</a>
-		</footer>
+				<footer class="entry-footer">
+					<a href="<?php echo get_permalink(); ?>">Read more</a>
+				</footer>
+			</div>
 	</article>
 </div>

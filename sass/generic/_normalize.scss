@@ -37,6 +37,10 @@ body {
 		@include bp(tablet) {
 			max-width: $default_width;
 		}
+
+		&.archive {
+			margin: 3em auto 0;
+		}
 	}
 }
 

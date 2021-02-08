@@ -26,8 +26,8 @@ body {
 					}
 
 					.archive-wrapper {
-						border-radius: 12px;
-						background-color: $primary__black_lighter;
+						border-radius: 5px;
+						background-color: $synth__purple;
 						overflow: hidden;
 
 						a {
@@ -64,10 +64,19 @@ body {
 							z-index: 5;
 						}
 
+						.wrapper-post {
+							border-bottom: 2px solid $red;
+							border-left: 2px solid $red;
+							border-right: 2px solid $red;
+							border-bottom-left-radius: 5px;
+							border-bottom-right-radius: 5px;
+						}
+
 						.entry-content {
-							// padding: 0;
 
 							h2 {
+								padding: 1em 0 0;
+								margin-top: 0;
 								font-size: 32px;
 								line-height: 1;
 
@@ -76,7 +85,6 @@ body {
 									text-decoration: none;
 
 									&:hover {
-										// color: $secondary__color_lighter;
 										text-decoration: underline;
 									}
 								}
@@ -96,14 +104,14 @@ body {
 									position: absolute;
 									display: block;
 									content: "";
-									background: $secondary__color;
+									background: $red;
 									height: 3px;
 									width: 100%;
 									overflow: hidden;
 								}
 
 								&:hover {
-									color: $secondary__color_lighter;
+									color: $red;
 								}
 
 								&:hover::after {
